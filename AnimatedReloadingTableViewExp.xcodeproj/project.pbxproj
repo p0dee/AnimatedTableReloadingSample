@@ -13,6 +13,7 @@
 		02C95C3D1BE4581A00F5463D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C95C3C1BE4581A00F5463D /* Assets.xcassets */; };
 		02C95C401BE4581A00F5463D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C95C3E1BE4581A00F5463D /* LaunchScreen.storyboard */; };
 		02C95C481BE4632000F5463D /* TableViewRootCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C95C471BE4632000F5463D /* TableViewRootCell.swift */; settings = {ASSET_TAGS = (); }; };
+		02C95C681BE5D58500F5463D /* CGAffineTransformAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C95C671BE5D58500F5463D /* CGAffineTransformAdditions.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		02C95C3F1BE4581A00F5463D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C95C411BE4581A00F5463D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C95C471BE4632000F5463D /* TableViewRootCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewRootCell.swift; sourceTree = "<group>"; };
+		02C95C671BE5D58500F5463D /* CGAffineTransformAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransformAdditions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				02C95C351BE4581A00F5463D /* AppDelegate.swift */,
 				02C95C371BE4581A00F5463D /* ViewController.swift */,
 				02C95C471BE4632000F5463D /* TableViewRootCell.swift */,
+				02C95C671BE5D58500F5463D /* CGAffineTransformAdditions.swift */,
 				02C95C391BE4581A00F5463D /* Main.storyboard */,
 				02C95C3C1BE4581A00F5463D /* Assets.xcassets */,
 				02C95C3E1BE4581A00F5463D /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				02C95C481BE4632000F5463D /* TableViewRootCell.swift in Sources */,
 				02C95C381BE4581A00F5463D /* ViewController.swift in Sources */,
+				02C95C681BE5D58500F5463D /* CGAffineTransformAdditions.swift in Sources */,
 				02C95C361BE4581A00F5463D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
