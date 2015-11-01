@@ -18,11 +18,8 @@ class TableViewRootCell: UITableViewCell {
     var extended: Bool {
         didSet {
             let angle: CGFloat = self.extended ? CGFloat(M_PI * 45 / 180) : 0
-            let t = triangle.transform
-            let scaleX = sqrt(t.a * t.a + t.c * t.c)
-            let scaleY = sqrt(t.b * t.b + t.d * t.d) //CGAffineTransformAdditions
-            let t_ = CGAffineTransformMakeScale(scaleX, scaleY)
-            triangle.transform = CGAffineTransformRotate(t_, angle)
+            let t = CGAffineTransformExtractScale(triangle.transform)
+            triangle.transform = CGAffineTransformRotate(t, angle)
         }
     }
     
@@ -30,8 +27,7 @@ class TableViewRootCell: UITableViewCell {
         didSet {
             scale = self.frame.size.height / initialHeight
             label.transform = CGAffineTransformMakeScale(scale, scale)
-            let angle = atan2(triangle.transform.b, triangle.transform.a)
-            let t = CGAffineTransformMakeRotation(angle)
+            let t = CGAffineTransformExtractRotation(triangle.transform)
             triangle.transform = CGAffineTransformScale(t, scale, scale)
         }
     }
