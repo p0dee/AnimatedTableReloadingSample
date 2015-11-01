@@ -12,14 +12,14 @@ class TableViewRootCell: UITableViewCell {
     
     var initialHeight: CGFloat = 60.0
     private var scale: CGFloat = 1.0
-    private let triangle = UIImageView()
+    private let cross = UIImageView()
     let label = UILabel()
     
     var extended: Bool {
         didSet {
             let angle: CGFloat = self.extended ? CGFloat(M_PI * 45 / 180) : 0
-            let t = CGAffineTransformExtractScale(triangle.transform)
-            triangle.transform = CGAffineTransformRotate(t, angle)
+            let t = CGAffineTransformExtractScale(cross.transform)
+            cross.transform = CGAffineTransformRotate(t, angle)
         }
     }
     
@@ -27,8 +27,8 @@ class TableViewRootCell: UITableViewCell {
         didSet {
             scale = self.frame.size.height / initialHeight
             label.transform = CGAffineTransformMakeScale(scale, scale)
-            let t = CGAffineTransformExtractRotation(triangle.transform)
-            triangle.transform = CGAffineTransformScale(t, scale, scale)
+            let t = CGAffineTransformExtractRotation(cross.transform)
+            cross.transform = CGAffineTransformScale(t, scale, scale)
         }
     }
     
@@ -47,17 +47,17 @@ class TableViewRootCell: UITableViewCell {
     }
     
     private func setupViews() {
-        triangle.translatesAutoresizingMaskIntoConstraints = false
-        triangle.image = UIImage(named: "cross")
-        self.contentView.addSubview(triangle)
+        cross.translatesAutoresizingMaskIntoConstraints = false
+        cross.image = UIImage(named: "cross")
+        self.contentView.addSubview(cross)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFontOfSize(30.0)
         self.contentView.addSubview(label)
     }
     
     private func setupConstraints() {
-        let triangleLeading = NSLayoutConstraint(item: triangle, attribute: .Leading, relatedBy: .Equal, toItem: self.contentView, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0)
-        let triangleCenterY = NSLayoutConstraint(item: triangle, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
+        let triangleLeading = NSLayoutConstraint(item: cross, attribute: .Leading, relatedBy: .Equal, toItem: self.contentView, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0)
+        let triangleCenterY = NSLayoutConstraint(item: cross, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
         let labelCenterX = NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         let labelCenterY = NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
         NSLayoutConstraint.activateConstraints([triangleLeading, triangleCenterY, labelCenterX, labelCenterY])
