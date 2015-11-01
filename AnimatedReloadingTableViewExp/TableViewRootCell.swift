@@ -11,8 +11,8 @@ import UIKit
 class TableViewRootCell: UITableViewCell {
     
     var initialHeight: CGFloat = 60.0
-    var scale: CGFloat = 1.0
-    let triangle = UIImageView()
+    private var scale: CGFloat = 1.0
+    private let triangle = UIImageView()
     let label = UILabel()
     
     var extended: Bool {
@@ -46,7 +46,7 @@ class TableViewRootCell: UITableViewCell {
         self.setupConstraints()
     }
     
-    func setupViews() {
+    private func setupViews() {
         triangle.translatesAutoresizingMaskIntoConstraints = false
         triangle.image = UIImage(named: "cross")
         self.contentView.addSubview(triangle)
@@ -55,7 +55,7 @@ class TableViewRootCell: UITableViewCell {
         self.contentView.addSubview(label)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         let triangleLeading = NSLayoutConstraint(item: triangle, attribute: .Leading, relatedBy: .Equal, toItem: self.contentView, attribute: .LeadingMargin, multiplier: 1.0, constant: 0.0)
         let triangleCenterY = NSLayoutConstraint(item: triangle, attribute: .CenterY, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
         let labelCenterX = NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
