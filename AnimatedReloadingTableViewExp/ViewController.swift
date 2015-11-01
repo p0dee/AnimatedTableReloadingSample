@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
     private let RootCellIdentifier = "RootCellIdentifier"
     private let SubCellIdentifier = "SubCellIdentifier"
     private let extendedSections = NSMutableIndexSet()
+    private let numberOfRowInSection = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ViewController: UITableViewController {
             extendedSections.removeIndex(section)
         }
         
-        let numOfRows = 5
+        let numOfRows = numberOfRowInSection
         var paths = [NSIndexPath]()
         for i in 1..<numOfRows {
             paths.append(NSIndexPath(forRow: i, inSection: section))
@@ -63,7 +64,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isSectionExtended(section) ? 5 : 1
+        return isSectionExtended(section) ? numberOfRowInSection : 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
