@@ -74,7 +74,7 @@ class ViewController: UITableViewController {
         if isRoot {
             if let cell = cell as? TableViewRootCell {
                 cell.label.text = "Section \(indexPath.section)"
-                cell.backgroundColor = UIColor(white: CGFloat(0.5 - 0.1 * Double(indexPath.section)), alpha: 1.0)
+                cell.backgroundColor = UIColor(white: CGFloat(0.5 - 0.5 * Double(indexPath.section) / Double(tableView.numberOfSections)), alpha: 1.0)
                 cell.label.textColor = UIColor.whiteColor()
                 cell.extended = isSectionExtended(indexPath.section)
             }
