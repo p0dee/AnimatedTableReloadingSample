@@ -11,10 +11,10 @@ import UIKit
 
 extension CGAffineTransform {
     var scale: (sx: CGFloat, sy: CGFloat) {
-        return (sqrt(self.a * self.a + self.c * self.c), sqrt(self.b * self.b + self.d * self.d))
+        return (sqrt(a * a + c * c), sqrt(b * b + d * d))
     }
     var angle: CGFloat {
-        return atan2(self.b, self.a)
+        return atan2(b, a)
     }
 }
 
